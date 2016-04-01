@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
+from django.core.urlresolvers import reverse
 
 
 class Blog(models.Model):
@@ -17,6 +18,9 @@ class Blog(models.Model):
 			return self.title[:50]+'.....'
 		return self.title
 
+	def get_absolute_url(self):
+		return reverse('view_blog_post', args=[self.slug])
+
 
 class Category(models.Model):
 	title = models.CharField(max_length=100, unique=True)
@@ -27,3 +31,6 @@ class Category(models.Model):
 		if len(self.title)>50:
 			return self.title[:50]+'.....'
 		return self.title
+
+	def get_absolute_url(self):
+		return reverse('view_blog_category', args=[self.slug])
