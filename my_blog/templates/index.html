@@ -1,10 +1,15 @@
 {% extends 'base.html' %}
 {% block title %}Blog - Yashu Seth {% endblock %}
 
+{% block index_url %} 
+
+{% endblock %}
+{% block GSoC_url %} {{GSoC_url}} {% endblock %}
+
+
 {% block content %}
 
 	<div class="post-preview">
-        <a href="post.html">
             <h2 class="post-title">
                 Categories
             </h2>
@@ -23,13 +28,11 @@
 					<p> There are no posts. </p>
 				{% endif %}
             </h3>
-        </a>
         <!-- <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p> -->
     </div>
     <hr>
 
     <div class="post-preview">
-	    <a href="post.html">
 	        <h2 class="post-title">
 	            Posts
 	        </h2>
@@ -47,7 +50,6 @@
 					<p> There are no posts. </p>
 				{% endif %}
 	        </h3>
-	    </a>
 	    <!-- <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 18, 2014</p> -->
 	</div>
 
