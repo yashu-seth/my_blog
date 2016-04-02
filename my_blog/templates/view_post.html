@@ -2,9 +2,18 @@
 
 {% block head_title %} {{ post.title }} {% endblock %}
 
-{% block title %} {{ post.title }} {% endblock %}
-
 
 {% block content %}
-    {{ post.body }}
-{% endblock %}
+
+<div class="post-preview">
+        <h2 class="post-title">
+                {% block title %} {{ post.title }} {% endblock %}
+        </h2>
+
+        <k class="post-subtitle">
+				    {{ post.body }}
+        </k>
+        <!-- <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p> -->
+ </div>
+
+ {% endblock %}
