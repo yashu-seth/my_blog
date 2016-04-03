@@ -10,7 +10,7 @@ from .models import Blog, Category
 def index(request):
 	return render_to_response('index.html', {
 		'categories': Category.objects.all(),
-		'posts': Blog.objects.all()[:7]
+		'posts': Blog.objects.all()[:7:-1]
 		})
 
 def view_post(request, slug):
